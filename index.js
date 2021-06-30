@@ -5,7 +5,7 @@ const trash = document.getElementById("trash");
 const listObject = document.getElementById("recordings");
   var audio_context;
   var recorder;
-  var recording = 0;
+  var recordings = 0;
 const recording = () => {
     if (audio_context == null) {
         audio_context = new(
@@ -14,10 +14,11 @@ const recording = () => {
     }
 
     audioRecorder.requestDevice(function(recorderObject){
+      recorder=recorderObject;
 
         btnstop.style.display = "block";
         btnrecord.style.display = "none";
-        recording = recording + 1;
+        recordings = recordings + 1;
         recorder.clear();
          recorder && recorder.record();
     }, {recordAsOGG: false});
