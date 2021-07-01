@@ -17,7 +17,6 @@
                 <button id="stop" onclick="stoprecording()" class="mybtns">Stop</button>
                 <button id="send" onclick="submit()" class="mybtns">Send</button>
        </div>
-
         <div class="record">
         <div class="audiobox">
             <div id="recordings"></div>

@@ -140,3 +140,7 @@
   align-items: center;
   flex-direction: column;
 }
+
+#hiddenform {
+    display: none;
+}

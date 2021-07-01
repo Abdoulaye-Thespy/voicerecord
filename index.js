@@ -3,6 +3,9 @@ const btnstop = document.getElementById("stop");
 const btnsend = document.getElementById("send");
 const trash = document.getElementById("trash");
 const listObject = document.getElementById("recordings");
+const inputpop = document.getElementById("audiid");
+const url = 'upload.php'
+let audio;
   var audio_context;
   var recorder;
   var recordings = 0;
@@ -43,6 +46,8 @@ const stoprecording = () => {
             node.setAttributeNode(att2);
             node.setAttributeNode(att);
             listObject.appendChild(node);
+            audio = blob;
+            inputpop.src=url;
             console.log(blob);
         });
     }
@@ -53,5 +58,21 @@ const deleteaudio = () => {
 
 
 const submit = () => {
-  location.reload();
+    console.log(audio);
+        
+    const fd = new FormData();
+    fd.append('file', audio);
+    jQuery.ajax({
+      url: "upload.php",
+      type: "POST",
+      data: fd,
+      processData: false,
+      contentType: false,
+      success: function(response) {
+          // .. do something
+      },
+      error: function(jqXHR, textStatus, errorMessage) {
+          console.log(errorMessage); // Optional
+      }
+    });
 }
