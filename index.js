@@ -47,7 +47,6 @@ const stoprecording = () => {
             node.setAttributeNode(att);
             listObject.appendChild(node);
             audio = blob;
-            inputpop.src=url;
             console.log(blob);
         });
     }

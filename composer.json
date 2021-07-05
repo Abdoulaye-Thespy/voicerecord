@@ -1,6 +1,7 @@
 {
     "require": {
-        "google/apiclient": "^2.10"
+        "google/apiclient": "^2.10",
+        "aws/aws-sdk-php": "^3.185"
     },
     "scripts": {
         "pre-autoload-dump": "Google\\Task\\Composer::cleanup"
